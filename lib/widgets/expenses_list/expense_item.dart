@@ -9,7 +9,7 @@ class ExpenseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.amber,
+      color: Colors.indigo,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
@@ -17,19 +17,25 @@ class ExpenseItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(expense.title),
+            Text(
+              expense.title,
+              style: const TextStyle(color: Colors.white),
+            ),
             const SizedBox(height: 4),
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                    '\$${expense.amount.toStringAsFixed(2)}'), //ensure angka dibelakang comma
+                Text('\$${expense.amount.toStringAsFixed(2)}',
+                    style: const TextStyle(
+                        color: Colors.white)), //ensure angka dibelakang comma
                 const Spacer(), //kasi spasi sampe ujung
                 Row(
                   children: [
-                    Icon(categoryIcons[expense.category]),
+                    Icon(categoryIcons[expense.category],
+                        color: Colors.limeAccent),
                     const SizedBox(width: 5),
-                    Text(expense.formattedDate),
+                    Text(expense.formattedDate,
+                        style: const TextStyle(color: Colors.white)),
                   ],
                 )
               ],

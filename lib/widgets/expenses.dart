@@ -11,7 +11,7 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
-  final List<Expense> _regesteredExpenses = [
+  final List<Expense> _registeredExpenses = [
     Expense(
       title: 'Flutter course',
       amount: 19.99,
@@ -28,9 +28,22 @@ class _ExpensesState extends State<Expenses> {
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
-      builder: (ctx) => const ExpenseFormOverlay(),
+      builder: (ctx) => ExpenseFormOverlay(onAddExpense: _addExpense),
     );
+  }
+
+  void _addExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.add(expense);
+    });
+  }
+
+  void _removeExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.remove(expense);
+    });
   }
 
   @override
@@ -49,7 +62,11 @@ class _ExpensesState extends State<Expenses> {
       body: Column(
         children: [
           const Text('The kodok'),
-          Expanded(child: ExpensesList(expenses: _regesteredExpenses)),
+          Expanded(
+              child: ExpensesList(
+            expenses: _registeredExpenses,
+            onRemoveExpense: _removeExpense,
+          )),
         ],
       ),
     );

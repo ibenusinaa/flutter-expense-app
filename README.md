@@ -4,6 +4,8 @@ A new Flutter project.
 
 What I learned
 
+Part 1
+
 1. showing snack bar
 2. show modal bottom sheet
 3. handle user input with text field and text controller
@@ -16,6 +18,14 @@ What I learned
 10. List View widget to show unknown length
 11. Dismissable widget
 12. Theming (very important)
+
+Part 2
+
+13. Safe Area
+14. Responsiveness on landscape
+15. Size Constraints
+16. Show Dialog but iOS
+17. Scrollability
 
 ## Getting Started
 

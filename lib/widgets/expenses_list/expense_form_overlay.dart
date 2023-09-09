@@ -258,8 +258,9 @@ class _ExpenseFormOverlayState extends State<ExpenseFormOverlay> {
               ElevatedButton(
                 onPressed: _resetNewExpense,
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red.shade500,
-                    padding: const EdgeInsets.all(10)),
+                  backgroundColor: Colors.red.shade500,
+                  // padding: const EdgeInsets.all(10),
+                ),
                 child: const Text(
                   'Reset Expense',
                   style: TextStyle(
@@ -270,9 +271,9 @@ class _ExpenseFormOverlayState extends State<ExpenseFormOverlay> {
               const SizedBox(width: 5),
               ElevatedButton(
                 onPressed: _saveNewExpense,
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.all(10),
-                ),
+                // style: ElevatedButton.styleFrom(
+                //   padding: const EdgeInsets.all(10),
+                // ),
                 child: const Text('Save Expense'),
               ),
             ],
